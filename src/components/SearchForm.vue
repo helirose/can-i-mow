@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { WeatherService } from '@/services/WeatherService'
 
 const location = ref('')
-const weatherData = ref<string>('')
+const weatherData = ref<string | false>('')
 const weatherService = new WeatherService()
 
 const fetchWeather = async (location: string) => {
@@ -17,9 +17,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col bg-green-100/15 rounded-lg p-6 border-1 border-green-50/20 backdrop-filter backdrop-blur-sm shadow-md"
-  >
+  <div class="flex flex-col glass-panel">
     <form class="w-full flex flex-col gap-2">
       <label class="flex flex-col text-lg" for="location"
         >Enter your postcode
